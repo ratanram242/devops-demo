@@ -21,7 +21,7 @@ jobs:
         run: npm install
       
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@v3
+        uses: SonarSource/sonarcloud-github-action@v2
         with:
           args: >
             -Dsonar.projectKey=ratanram242_devops-demo
