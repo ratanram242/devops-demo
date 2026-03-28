@@ -31,9 +31,6 @@ jobs:
 
       - name: Run app
         run: node index.js
-
-      - name: Force Fail
-        run: exit 1
         
       - name: Notify Jira on Failure
         if: failure()
