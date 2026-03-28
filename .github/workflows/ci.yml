@@ -31,6 +31,7 @@ jobs:
 
       - name: Run app
         run: node index.js
+        
       - name: Notify Jira on Failure
         if: failure()
         run: |
