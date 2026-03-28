@@ -19,6 +19,14 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        with:
+          args: >
+            -Dsonar.projectKey=ratanram242_devops-demo
+            -Dsonar.organization=ratanram242
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Run app
         run: node index.js
