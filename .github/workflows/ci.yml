@@ -31,11 +31,13 @@ jobs:
 
       - name: Run app
         run: node index.js
+
+      - name: Force Fail
+        run: exit 1
         
       - name: Notify Jira on Failure
         if: failure()
         run: |
           curl -X POST "https://api-private.atlassian.com/automation/webhooks/jira/a/59d40bfa-8f92-4f29-97a6-315c2444bac8/019d33c7-73f3-75f7-90e5-cb7ad647b38d"
 
-      - name: Force Fail
-        run: exit 1
+      
