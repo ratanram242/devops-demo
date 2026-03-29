@@ -41,4 +41,12 @@ jobs:
               curl -X POST "https://api-private.atlassian.com/automation/webhooks/jira/a/59d40bfa-8f92-4f29-97a6-315c2444bac8/019d33c7-73f3-75f7-90e5-cb7ad647b38d" \
                 -H "Content-Type: application/json" \
                 -H "X-Automation-Webhook-Token: fdf6ddfc9140201dc61b1b5f98910da7c8a0f03e"
-                -d '{}'
+                -d '{
+                  "fields": {
+                    "summary": "CI Failed: '${{ github.workflow }}'",
+                    "description": "Run failed: '${{ github.run_id }}'",
+                    "issuetype": {
+                      "name": "Bug"
+                    }
+                  }
+                }
